@@ -94,13 +94,4 @@ sumMaster$axis <- ifelse(sumMaster$axis == "", "None", sumMaster$axis)
 names(sumMaster)[names(sumMaster) == "mean"] <- "averageOfMean"
 names(sumMaster)[names(sumMaster) == "std"] <- "averageOfStd"
 
-View(sumMaster)
-
-
-# ss <- sumtub
-# ss <- gather(ss, variable, value, -(1:2))
-# ss <- separate(ss, col = variable, into = c("measurement", "aggregateType", "axis"), 
-#                extra = "merge")
-# ss <- spread(ss, aggregateType, value)
-# 
-# View(ss)
+write.table(sumMaster, "./sumMaster.txt", row.names = FALSE)

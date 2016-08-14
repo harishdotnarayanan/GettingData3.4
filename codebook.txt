@@ -15,9 +15,14 @@ There are 6 different types of activities being tracked:
 ### 2. subject: The subject that was performing the activity.
 	1 .. 30 (30 different subjects)
 
-(Columns 3 to 6 below follow the principles of Tidy Data as follows: each column represents a variable (such as feature, axis, mean and std.) Each feature is a variable that is recorded on 3 dimensions. Each of these dimensions are treated as variables as well. Mean and Std are available for all features and hence can be treated as variables.)
+(Columns 3 to 6 below follow the principles of Tidy Data as follows: each column represents a variable (such as 
+feature, axis, mean and std.) Each feature is a variable that is recorded on 3 dimensions. Each of these dimensions 
+are treated as variables as well. Mean and Std are available for all features and hence can be treated as variables.)
 
-### 3. feature: the name of the feature or measurement obtained from the accelerometer and gyroscope. This combines with axis and mean/std to give the appropriate value in that axis. All values with the word “Jerk” imply that there is Jerk associated with the feature when the reading was taken. Values with “Mag” imply the magnitude of the 3-dimensional signals.
+### 3. feature: the name of the feature or measurement obtained from the accelerometer and gyroscope. This combines 
+with axis and mean/std to give the appropriate value in that axis. All values with the word “Jerk” imply that there 
+is Jerk associated with the feature when the reading was taken. Values with “Mag” imply the magnitude of the 3-dimensional 
+signals.
 The possible values are:
 	frequencyOfBodyAcceleration
 	frequencyOfBodyAccelerationJerk
@@ -37,13 +42,18 @@ The possible values are:
 	timeOfGravityAcceleration
 	timeOfGravityAccelerationMag
 
-### 4. axis: Denotes which of the 3 axis (X or Y or Z) the signal was measured on. If axis is not relevant to the feature/measurement, “None” is entered.
+### 4. axis: Denotes which of the 3 axis (X or Y or Z) the signal was measured on. If axis is not relevant to the 
+feature/measurement, “None” is entered.
 The possible values are:
 	X
 	Y
 	Z
 	None
 
-### 5. averageOfMean: This is the average of the normalized values of the means of the corresponding “feature/measurement” on the “axis”, for the “subject” while performing the “activity”. This is bounded between [-1,1]
+### 5. averageOfMean: This is the average of the normalized values of the means of the corresponding 
+“feature/measurement” on the “axis”, for the “subject” while performing the “activity”. 
+This is bounded between [-1,1]
 
-### 6. averageOfStd: This is the average of the normalized values of the standard deviations of the corresponding “feature/measurement” on the “axis”, for the “subject” while performing the “activity”. This is bounded between [-1,1]
+### 6. averageOfStd: This is the average of the normalized values of the standard deviations of the 
+corresponding “feature/measurement” on the “axis”, for the “subject” while performing the “activity”. 
+This is bounded between [-1,1]
