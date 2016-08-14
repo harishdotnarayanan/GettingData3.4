@@ -1,0 +1,47 @@
+CODEBOOK - Week 4 Assignment
+
+VARIABLES:
+
+1. activity: Indicates the type of activity that was performed by the subjects when values were collected. 
+
+There are 6 different types of activities being tracked:
+	WALKING
+	WALKING_UPSTAIRS
+	WALKING_DOWNSTAIRS
+	SITTING
+	STANDING
+	LAYING	
+
+2. subject: The subject that was performing the activity.
+	1 .. 30 (30 different subjects)
+
+3. feature: the name of the feature or measurement obtained from the accelerometer and gyroscope. This combines with axis and mean/std to give the appropriate value in that axis. 
+The possible values are:
+	frequencyOfBodyAcceleration
+	frequencyOfBodyAccelerationJerk
+	frequencyOfBodyAccelerationMag
+	frequencyOfBodyBodyAccelerationJerkMag
+	frequencyOfBodyBodyGyroJerkMag
+	frequencyOfBodyBodyGyroMag
+	frequencyOfBodyGyro
+	timeOfBodyAcceleration
+	timeOfBodyAccelerationJerk
+	timeOfBodyAccelerationJerkMag
+	timeOfBodyAccelerationMag
+	timeOfBodyGyro
+	timeOfBodyGyroJerk
+	timeOfBodyGyroJerkMag
+	timeOfBodyGyroMag
+	timeOfGravityAcceleration
+	timeOfGravityAccelerationMag
+
+4. axis: Denotes which of the 3 axis (X or Y or Z) the signal was measured on. If axis is not relevant to the feature/measurement, “None” is entered.
+The possible values are:
+	X
+	Y
+	Z
+	None
+
+5. averageOfMean: This is the average of the normalized values of the means of the corresponding “feature/measurement” on the “axis”, for the “subject” while performing the “activity”. This is bounded between [-1,1]
+
+6. averageOfStd: This is the average of the normalized values of the standard deviations of the corresponding “feature/measurement” on the “axis”, for the “subject” while performing the “activity”. This is bounded between [-1,1]
