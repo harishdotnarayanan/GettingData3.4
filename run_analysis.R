@@ -1,3 +1,5 @@
+library(dplyr)
+library(tidyr)
 
 setwd("/Users/harish/work/coursera/datascience/UCI HAR Dataset")
   
@@ -39,7 +41,32 @@ tub <- rbind(tubtest, tubtrain)
 
 tub <- tub  %>% merge(activity, by = "activity_id")
 tub$activity <- factor(tub$activity, levels = c("WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING"))
-tub <- group_by(tub, activity, subject) 
+tub <- group_by(tub, activity, subject)
+tub <- tub %>% select(c(69, 2), 3:68)
 
-#summarize(function(x) {mean(x)})
+newnames <- gsub("^t", "timeOf", names(tub))
+newnames <- gsub("^f", "frequencyOf", newnames)
+newnames <- gsub("Acc", "Acceleration", newnames)
 
+names(tub) <- newnames
+
+sumtub <- summarize_each(tub, "mean")
+
+sumtub <- sumtub %>% gather(variable, value, -(1:2)) %>%
+  separate(col = variable, into = c("measurement", "aggType", "axis"), extra = "merge") %>%
+  spread(aggType, value)
+
+sumtub$axis <- ifelse(sumtub$axis == "", "None", sumtub$axis)
+names(sumtub)[names(sumtub) == "mean"] <- "averageOfMean"
+names(sumtub)[names(sumtub) == "std"] <- "averageOfStd"
+
+View(sumtub)
+
+
+# ss <- sumtub
+# ss <- gather(ss, variable, value, -(1:2))
+# ss <- separate(ss, col = variable, into = c("measurement", "aggregateType", "axis"), 
+#                extra = "merge")
+# ss <- spread(ss, aggregateType, value)
+# 
+# View(ss)
